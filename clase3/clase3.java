@@ -1,8 +1,8 @@
-package clase3;
+package Clase3;
 
 public class clase3 {
 
-    public static class Ejercicio1 {
+    public static class Ejercicio1A {
 
         public static int contarLetra(String cadena, char letra) {
 
@@ -14,13 +14,7 @@ public class clase3 {
             }
             return contador;
         }
-
-        // public static void main(String[] args) {
-        // int numero = Ejercicio1.contarLetra("perro", 'e');
-        // System.out.println(numero);
-
-        // }
-    }
+      }
 
     public static class Ejercicio2 {
         public static int[] ordenar(int numero1, int numero2, int numero3) {
@@ -31,7 +25,7 @@ public class clase3 {
         }
 
         public static void main(String[] args) {
-            int[] numero = Ejercicio2.ordenar(1, 3, 4);
+            int[] numero = Ejercicio2.ordenar(5, 4, 4);
 
             for (int i = 0; i < numero.length; i++) {
                 System.out.print(numero[i] + " ");
@@ -42,3 +36,4 @@ public class clase3 {
     }
 
 }
+

@@ -101,8 +101,7 @@ public class Clase1 {
     
             Double máximo = 489.083;
     
-            if (ingresos >= máximo || (vehiculos.cantidad > 3 && vehiculos.antigüedadDelMasViejo < 5) || inmuebles >= 3
-                    || embarcaciónOAvión == true) {
+            if (ingresos >= máximo || (vehiculos.cantidad >= 3 && vehiculos.antigüedadDelMasViejo <= 5) || inmuebles >= 3 || embarcaciónOAvión == true) {
                 System.out.println("Esta persona pertenece al segmento de ingresos altos");
             } else {
                 System.out.println("esta persona no pertenece al segmento de ingresos altos");
