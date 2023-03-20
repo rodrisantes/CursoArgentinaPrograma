@@ -58,6 +58,7 @@ public class clase4 {
         }
             if(args.length == 0 ){
             ejercicio1B();}
+            
 
     }
       
