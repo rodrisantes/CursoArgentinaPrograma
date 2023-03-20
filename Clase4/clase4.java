@@ -3,20 +3,21 @@ package Clase4;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class clase4 {
+public class clase4{
 
-    public static int[] ejercicio1A(int numero1, int numero2, int numero3, char orden) {
+    public static int[] ejercicio1A(int numero1, int numero2, int numero3, String orden) {
         int[] numeros = { numero1, numero2, numero3 };
 
-        if (orden == 'a') {
+        if (orden.equals("a")) {
             Arrays.sort(numeros);
-        } else if (orden == 'b') {
+        } else if (orden.equals("b")) {
             Arrays.sort(numeros);
             int numeroFinal = numeros[0];
             numeros[0] = numeros[2];
             numeros[2] = numeroFinal;
+        } else {
+            System.out.println("la letra es invalida");
         }
-        
         return numeros;
     }
 
@@ -29,38 +30,45 @@ public class clase4 {
 
         System.out.println("Ingrese 'a' para ordenar ascendentemente o 'd' para ordenar descendentemente:");
         String letra = sc.next();
+        int[] ordenados = ejercicio1A(num1, num2, num3, letra);
+        return ordenados;
+    }
+
+    public static void main(String[] args) {
+        int num1, num2, num3;
+        String orden;
+        Scanner scanner = new Scanner(System.in);
+        if (args.length == 4) {
+            num1 = Integer.parseInt(args[0]);
+            num2 = Integer.parseInt(args[1]);
+            num3 = Integer.parseInt(args[2]);
+            orden = args[3];
+        } else {
+            System.out.print("Ingrese el primer número: ");
+            num1 = scanner.nextInt();
+            System.out.print("Ingrese el segundo número: ");
+            num2 = scanner.nextInt();
+            System.out.print("Ingrese el tercer número: ");
+            num3 = scanner.nextInt();
+            System.out.print("Ingrese 'a' o 'd': ");
+            orden = scanner.next();
+        }
 
         int[] numeros = { num1, num2, num3 };
 
-        if (letra.equals("a")) {
+        if (orden.equals("a")) {
             Arrays.sort(numeros);
-        } else if (letra.equals("d")) {
+        } else if (orden.equals("d")) {
             Arrays.sort(numeros);
-            int numeroFinal = numeros[0];
+            int temp = numeros[0];
             numeros[0] = numeros[2];
-            numeros[2] = numeroFinal;
+            numeros[2] = temp;
         } else {
-            System.out.println("letra invalida");
+            System.out.println("La letra es invalida");
+            return;
         }
-        return numeros;
+
+        System.out.println(Arrays.toString(numeros));
     }
-
-
-
-    public static void main(String[] args) {
-        int[] ordenado = ejercicio1A(162, 323, 54, 'd');
-        for (int i = 0; i < ordenado.length; i++) {
-            System.out.println(ordenado[i]);
-        }
-        int[] numerosOrdenados = ejercicio1B();
-        for (int i = 0; i < ordenado.length; i++) {
-            System.out.println(numerosOrdenados[i]);
-        }
-            if(args.length == 0 ){
-            ejercicio1B();}
-            
-
-    }
-      
 
 }
