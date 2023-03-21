@@ -5,34 +5,34 @@ import java.util.Scanner;
 
 public class clase4{
 
-    public static int[] ejercicio1A(int numero1, int numero2, int numero3, String orden) {
-        int[] numeros = { numero1, numero2, numero3 };
+    // public static int[] ejercicio1A(int numero1, int numero2, int numero3, String orden) {
+    //     int[] numeros = { numero1, numero2, numero3 };
 
-        if (orden.equals("a")) {
-            Arrays.sort(numeros);
-        } else if (orden.equals("b")) {
-            Arrays.sort(numeros);
-            int numeroFinal = numeros[0];
-            numeros[0] = numeros[2];
-            numeros[2] = numeroFinal;
-        } else {
-            System.out.println("la letra es invalida");
-        }
-        return numeros;
-    }
+    //     if (orden.equals("a")) {
+    //         Arrays.sort(numeros);
+    //     } else if (orden.equals("b")) {
+    //         Arrays.sort(numeros);
+    //         int numeroFinal = numeros[0];
+    //         numeros[0] = numeros[2];
+    //         numeros[2] = numeroFinal;
+    //     } else {
+    //         System.out.println("la letra es invalida");
+    //     }
+    //     return numeros;
+    // }
 
-    public static int[] ejercicio1B() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese sus tres numeros");
-        int num1 = sc.nextInt();
-        int num2 = sc.nextInt();
-        int num3 = sc.nextInt();
+    // public static int[] ejercicio1B() {
+    //     Scanner sc = new Scanner(System.in);
+    //     System.out.println("Ingrese sus tres numeros");
+    //     int num1 = sc.nextInt();
+    //     int num2 = sc.nextInt();
+    //     int num3 = sc.nextInt();
 
-        System.out.println("Ingrese 'a' para ordenar ascendentemente o 'd' para ordenar descendentemente:");
-        String letra = sc.next();
-        int[] ordenados = ejercicio1A(num1, num2, num3, letra);
-        return ordenados;
-    }
+    //     System.out.println("Ingrese 'a' para ordenar ascendentemente o 'd' para ordenar descendentemente:");
+    //     String letra = sc.next();
+    //     int[] ordenados = ejercicio1A(num1, num2, num3, letra);
+    //     return ordenados;
+    // }
 
     public static void main(String[] args) {
         int num1, num2, num3;
