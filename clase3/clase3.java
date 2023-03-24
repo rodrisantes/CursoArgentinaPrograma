@@ -80,7 +80,7 @@ public class clase3 {
     }
 
     public static void main(String[] args) {
-
+        System.out.println(Ejercicio2.codificacion("asd asddasd",5));
         // int[] numerosOrdenados = Ejercicio1B.ordenar(9, 4, 5, "ascendente");
         // System.out.println(Arrays.toString(numerosOrdenados));
 

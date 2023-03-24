@@ -1,49 +1,44 @@
 package Clase4;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class clase4E3 {
 
-    public static String codificacion(String cadena, int cantidadDeDesplazamientos) {
-        String palabraFinal = "";
+    public static void codificacion(String ArchivoEntrada, String ArchivoSalida, int cantidadDeDesplazamientos, boolean codificacion) {
         String abecedario = "abcdefghijklmnñopqrstuvwxyz";
-        String[] abcededarioSplit = abecedario.split("");
-        String[] cadenaConEspacios = cadena.split(" ");
-        String cadenaSinEspacios = "";
-        for (int i = 0; i < cadenaConEspacios.length; i++) {
-            cadenaSinEspacios += cadenaConEspacios[i];
-        }
-        String[] cadenaSinEspaciosSeparada = cadenaSinEspacios.split("");
-
-        for (int i = 0; i < cadenaSinEspaciosSeparada.length; i++) {
-            for (int j = 0; j < abcededarioSplit.length; j++) {
-                if (cadenaSinEspaciosSeparada[i].toLowerCase().equals(abcededarioSplit[j])) {
-
-                    palabraFinal += abcededarioSplit[j + cantidadDeDesplazamientos];
+        try (BufferedReader br = new BufferedReader(new FileReader(ArchivoEntrada));
+                BufferedWriter bw = new BufferedWriter(new FileWriter(ArchivoSalida))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String resultado = "";
+                for (char c : linea.toLowerCase().toCharArray()) {
+                    // System.out.println(c);
+                    int posicion = abecedario.indexOf(c);
+                    System.out.println(posicion);
+                        int nuevaPosicion = posicion
+                                + (codificacion ? cantidadDeDesplazamientos : -cantidadDeDesplazamientos);
+                        resultado += abecedario.charAt(nuevaPosicion);
+                  
                 }
-
+                bw.write(resultado);
             }
-
+            System.out.println("Terminado correctamente");
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
         }
-
-        return palabraFinal;
 
     }
 
     public static void main(String[] args) {
-        String operacion = args[0];
-        int desplazamiento = Integer.parseInt(args[1]);
-        String archivoEntrada = args[2];
-        String archivoSalida = args[3];
 
-        String ruta = "C:\\Users\\Valentina\\Desktop\\CursoArgentinaPrograma\\Clase4\\texto.txt";
-        // String rutaLeida = Paths.get(ruta);
-        // String ruta2 = Files.readAllLines(rutaLeida);
-
-        String salida = codificacion(ruta, 3);
-
-        System.out.println(salida);
+        // String ruta = "C:\\Users\\Valentina\\Desktop\\CursoArgentinaPrograma\\Clase4\\textoCodOrDecod.txt";
+        // String salida = "C:\\Users\\Valentina\\Desktop\\CursoArgentinaPrograma\\Clase4\\textoSalida.txt";
+       
+        // codificacion(ruta, salida, 3, true);
 
     }
 
