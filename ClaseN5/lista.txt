@@ -1,3 +1,0 @@
-2,40,jabon,
-4,50,arroz,
-7,80,empanadas,
