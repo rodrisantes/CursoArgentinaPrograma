@@ -1,23 +1,11 @@
-package Clase6;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
 
-public class Calculadora {
+import Clase6.Calculadora;
 
-    public double Suma(double num1,double num2){
-        return num1 + num2;
-    }
-    public double Resta(double num1,double num2){
-        return num1 - num2;
-    }
-
-    public double Multiplicacion(double num1,double num2){
-        return num1 * num2;
-    }
-    public double Dvision(double num1,double num2){
-        return num1 / num2;
-    }
+public class CalculadoraTest {
     
     @Test
     public void testMultiplicar() {
@@ -25,6 +13,7 @@ public class Calculadora {
         double resultado = calculadora.Multiplicacion(80, 3);
         assertEquals(240, resultado, 0);
     }
+
 
     @Test
     public void testSumarYDividir() {
@@ -40,14 +29,11 @@ public class Calculadora {
         assertNotEquals(605, resultado, 0);
     }
 
+
     @Test
     public void testSumarYMultiplicar() {
         Calculadora calculadora = new Calculadora();
         double resultado = calculadora.Suma(70, 40) * 25;
         assertNotEquals(2700, resultado, 0);
-    }
-
-public static void main(String[]args){
-   
     }
 }

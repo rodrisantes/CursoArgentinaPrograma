@@ -1,3 +1,5 @@
+package Clase1;
+
 public class Clase1 {
 
     public static class ejercicio1A {
